@@ -3,70 +3,58 @@
   <%- include("partials/head.ejs") %>
 
   <body>
+    <main id="main">
+      <h1>My Blog App!</h1>
 
-    <h1>My Blog App!</h1>
+      <form class="create-post-form" action="/create" method="post">
+        <input
+          class="create-post-form__title"
+          type="text"
+          name="title"
+          required
+          placeholder="Add a title..."
+        />
+        <textarea
+          class="create-post-form__text"
+          name="text"
+          cols="30"
+          rows="10"
+          required
+          placeholder="Add some text..."
+        ></textarea>
+        <input class="create-post-form__create" type="submit" value="Create" />
+      </form>
 
-    <form action="/create" method="post">
-      <input
-        type="text"
-        name="title"
-        required
-        placeholder="Add a title..."
-      />
-      <textarea
-        name="text"
-        cols="30"
-        rows="10"
-        required
-        placeholder="Add some text..."
-      ></textarea>
-      <input type="submit" value="Create" />
-    </form>
-
-    <% if (blog.posts.length >= 1) { %>
-    <ol class="blog-posts">
-      <% blog.posts.forEach((post)=> { %>
-      <li class="blog-posts__item">
-        <p class="blog-posts__title"><%= post.title %></p>
-        <p class="blog-posts__text"><%= post.text %></p>
-        <p><%= post.date %></p>
-        <form>
-          <input
-            class="blog-posts__id"
-            type="hidden"
-            name="id"
-            value="<%= post.id %>"
-          />
-          <input
-            class="blog-posts__id"
-            type="hidden"
-            name="title"
-            value="<%= post.title %>"
-          />
-          <input
-            class="blog-posts__id"
-            type="hidden"
-            name="text"
-            value="<%= post.text %>"
-          />
-          <input
-            class="blog-posts__update"
-            type="submit"
-            formaction="/edit"
-            formmethod="post"
-            value="Edit"
-          />
-          <input
-            type="submit"
-            formaction="/delete"
-            formmethod="post"
-            value="Delete"
-          />
-        </form>
-      </li>
-      <% }); %>
-    </ol>
-    <% } %>
-
+      <% if (blog.posts.length >= 1) { %>
+      <ol class="blog-posts">
+        <% blog.posts.forEach((post)=> { %>
+        <li class="blog-posts__item">
+          <p class="blog-posts__title"><%= post.title %></p>
+          <p class="blog-posts__text"><%= post.text %></p>
+          <p class="blog-posts__date"><%= post.date %></p>
+          <form>
+            <input type="hidden" name="id" value="<%= post.id %>" />
+            <input type="hidden" name="title" value="<%= post.title %>" />
+            <input type="hidden" name="text" value="<%= post.text %>" />
+            <input
+              class="blog-posts__edit"
+              type="submit"
+              formaction="/edit"
+              formmethod="post"
+              value="Edit"
+            />
+            <input
+              class="blog-posts__delete"
+              type="submit"
+              formaction="/delete"
+              formmethod="post"
+              value="Delete"
+            />
+          </form>
+        </li>
+        <% }); %>
+      </ol>
+      <% } %>
+    </main>
   </body>
 </html>

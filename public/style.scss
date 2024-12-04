@@ -1,3 +1,70 @@
+// Base Rules
+
+html {
+  font-size: 62.5%;
+}
+
+* > * {
+  box-sizing: border-box;
+  margin-top: 0;
+}
+
+body {
+  margin: 0;
+}
+
 h1 {
-    color: gold;
+  color: green;
+}
+
+// Layout Rules
+
+#main {
+  margin: 0 auto;
+  min-width: 37.5rem;
+  max-width: 76.8rem;
+}
+
+// Base Rules
+
+.create-post-form {
+  &__title {
+  }
+
+  &__text {
+  }
+
+  &__create {
+  }
+}
+
+.blog-posts {
+  &__item {
+  }
+
+  &__title {
+  }
+
+  &__text {
+  }
+
+  &__date {
+  }
+
+  &__edit {
+  }
+
+  &__delete {
+  }
+}
+
+.edit-post-form {
+
+    &__title {}
+
+    &__text {}
+
+    &__update {}
+
+    &__cancel {}
 }

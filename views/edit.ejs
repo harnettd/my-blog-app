@@ -3,21 +3,35 @@
   <%- include("partials/head.ejs") %>
 
   <body>
+    <main id="main">
+      <h1>Edit Blog Post:</h1>
 
-    <h1>Edit Blog Post:</h1>
-
-    <form>
-      <input type="hidden" name="id" value="<%= id %>" />
-      <input type="text" name="title" value="<%= title %>" />
-      <textarea name="text" cols="30" rows="10"><%= text %></textarea>
-      <input
-        type="submit"
-        formaction="/update"
-        formmethod="post"
-        value="Submit"
-      />
-      <input type="submit" formaction="/" formmethod="get" value="Cancel" />
-    </form>
-  
-</body>
+      <form class="edit-post-form">
+        <input type="hidden" name="id" value="<%= id %>" />
+        <input
+          class="edit-post-form__title"
+          type="text"
+          name="title"
+          value="<%= title %>"
+        />
+        <textarea class="edit-post-form__text" name="text" cols="30" rows="10">
+<%= text %></textarea
+        >
+        <input
+          class="edit-post-form__update"
+          type="submit"
+          formaction="/update"
+          formmethod="post"
+          value="Submit"
+        />
+        <input
+          class="edit-post-form__cancel"
+          type="submit"
+          formaction="/"
+          formmethod="get"
+          value="Cancel"
+        />
+      </form>
+    </main>
+  </body>
 </html>
