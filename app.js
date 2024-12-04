@@ -17,11 +17,6 @@ const blog = {
     posts: [],
     nextId: 0,
 
-    reset: function () {
-        this.posts = [];
-        this.nextId = 0;
-    },
-
     create: function (title, text) {
         this.posts.unshift(new BlogPost(this.nextId, title, text));
         this.nextId++;
