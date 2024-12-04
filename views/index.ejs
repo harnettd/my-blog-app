@@ -4,23 +4,23 @@
 
   <body>
 
-    <h1>My Blog!</h1>
+    <h1>My Blog App!</h1>
 
     <form action="/create" method="post">
       <input
         type="text"
         name="title"
         required
-        placeholder="Provide a title...."
+        placeholder="Add a title..."
       />
       <textarea
         name="text"
         cols="30"
         rows="10"
         required
-        placeholder="Type your post here...."
+        placeholder="Add some text..."
       ></textarea>
-      <input type="submit" value="create" />
+      <input type="submit" value="Create" />
     </form>
 
     <% if (blog.posts.length >= 1) { %>
@@ -54,13 +54,13 @@
             type="submit"
             formaction="/edit"
             formmethod="post"
-            value="edit"
+            value="Edit"
           />
           <input
             type="submit"
             formaction="/delete"
             formmethod="post"
-            value="delete"
+            value="Delete"
           />
         </form>
       </li>
