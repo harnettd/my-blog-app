@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<%- include("partials/head.ejs") %>
+
+<body>
+
+    <h1>Update!</h1>
+
+    <form>
+        <input type="hidden" name="id" value="<%= id %>">
+        <input type="text" name="title" value="<%= title %>">
+        <textarea name="text" cols="30" rows="10"><%= text %></textarea>
+        <input type="submit" formaction="/update" formmethod="post" value="submit">
+        <input type="submit" formaction="/" formmethod="get" value="cancel">
+    </form>
+    
+</body>
+</html>
