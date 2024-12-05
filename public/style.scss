@@ -1,3 +1,8 @@
+$primary: #54473f;
+$secondary: #9a7e6f;
+$page-bg: #CBD2A4;
+$input-bg: #e9eed9;
+
 html {
   font-size: 62.5%;
 }
@@ -9,6 +14,7 @@ html {
 
 body {
   margin: 0;
+  background-color: $page-bg;
 }
 
 // Placeholder Selectors
@@ -67,6 +73,8 @@ body {
   @extend %padded-md;
   width: 100%;
   font-size: 1.6rem;
+  color: $primary;
+  background-color: $input-bg;
 }
 
 %input-title {
@@ -84,6 +92,9 @@ body {
   @extend %padded-sm;
   @extend %roboto-regular;
   font-size: 1.6rem;
+  color: $input-bg;
+  background-color: $secondary;
+  border: 0.1rem solid $primary;
 }
 
 %btn-row {
@@ -100,6 +111,7 @@ h1 {
   font-size: 4rem;
   @extend %roboto-bold;
   text-align: center;
+  color: $primary;
 }
 
 // Layout Rules
@@ -137,28 +149,32 @@ h1 {
   &__item {
     list-style-type: none;
     margin-bottom: 1.6rem;
-    border: 0.1rem solid black;
+    border: 0.1rem solid $primary;
     @extend %rounded-border;
     @extend %padded-md;
     width: 100%;
+    background-color: $input-bg;
   }
 
   &__title {
     margin-bottom: 0.8rem;
     @extend %barlow-bold;
     font-size: 1.6rem;
+    color: $primary;
   }
 
   &__text {
     margin-bottom: 0.8rem;
     @extend %barlow-regular;
     font-size: 1.6rem;
+    color: $primary;
   }
 
   &__date {
     margin-bottom: 1.2rem;
     @extend %roboto-light;
     font-size: 1.2rem;
+    color: $primary;
   }
 
   &__btn-row {

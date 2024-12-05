@@ -9,6 +9,7 @@ html {
 
 body {
   margin: 0;
+  background-color: #CBD2A4;
 }
 
 .blog-posts__title, .edit-post-form__title, .create-post-form__title {
@@ -57,10 +58,15 @@ h1 {
   margin-bottom: 0.8rem;
   width: 100%;
   font-size: 1.6rem;
+  color: #54473f;
+  background-color: #e9eed9;
 }
 
 .edit-post-form__cancel, .edit-post-form__update, .blog-posts__delete, .blog-posts__edit, .create-post-form__create {
   font-size: 1.6rem;
+  color: #e9eed9;
+  background-color: #9a7e6f;
+  border: 0.1rem solid #54473f;
 }
 
 .edit-post-form__btn-row, .blog-posts__btn-row {
@@ -74,6 +80,7 @@ h1 {
   margin: 1.2rem 0 4rem;
   font-size: 4rem;
   text-align: center;
+  color: #54473f;
 }
 
 #main {
@@ -96,20 +103,24 @@ h1 {
 .blog-posts__item {
   list-style-type: none;
   margin-bottom: 1.6rem;
-  border: 0.1rem solid black;
+  border: 0.1rem solid #54473f;
   width: 100%;
+  background-color: #e9eed9;
 }
 .blog-posts__title {
   margin-bottom: 0.8rem;
   font-size: 1.6rem;
+  color: #54473f;
 }
 .blog-posts__text {
   margin-bottom: 0.8rem;
   font-size: 1.6rem;
+  color: #54473f;
 }
 .blog-posts__date {
   margin-bottom: 1.2rem;
   font-size: 1.2rem;
+  color: #54473f;
 }
 
 /*# sourceMappingURL=style.css.map */
