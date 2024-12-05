@@ -4,7 +4,7 @@
 
   <body>
     <main id="main">
-      <h1>Edit Blog Post:</h1>
+      <h1>Edit Blog Post</h1>
 
       <form class="edit-post-form">
         <input type="hidden" name="id" value="<%= id %>" />
@@ -14,23 +14,25 @@
           name="title"
           value="<%= title %>"
         />
-        <textarea class="edit-post-form__text" name="text" cols="30" rows="10">
+        <textarea class="edit-post-form__text" name="text" rows="6">
 <%= text %></textarea
         >
-        <input
-          class="edit-post-form__update"
-          type="submit"
-          formaction="/update"
-          formmethod="post"
-          value="Submit"
-        />
-        <input
-          class="edit-post-form__cancel"
-          type="submit"
-          formaction="/"
-          formmethod="get"
-          value="Cancel"
-        />
+        <div class="edit-post-form__btn-row">
+          <input
+            class="edit-post-form__update"
+            type="submit"
+            formaction="/update"
+            formmethod="post"
+            value="Submit"
+          />
+          <input
+            class="edit-post-form__cancel"
+            type="submit"
+            formaction="/"
+            formmethod="get"
+            value="Cancel"
+          />
+        </div>
       </form>
     </main>
   </body>

@@ -17,8 +17,7 @@
         <textarea
           class="create-post-form__text"
           name="text"
-          cols="30"
-          rows="10"
+          rows="6"
           required
           placeholder="Add some text..."
         ></textarea>
@@ -29,27 +28,29 @@
       <ol class="blog-posts">
         <% blog.posts.forEach((post)=> { %>
         <li class="blog-posts__item">
-          <p class="blog-posts__title"><%= post.title %></p>
+          <h2 class="blog-posts__title"><%= post.title %></h2>
           <p class="blog-posts__text"><%= post.text %></p>
           <p class="blog-posts__date"><%= post.date %></p>
           <form>
             <input type="hidden" name="id" value="<%= post.id %>" />
             <input type="hidden" name="title" value="<%= post.title %>" />
             <input type="hidden" name="text" value="<%= post.text %>" />
-            <input
-              class="blog-posts__edit"
-              type="submit"
-              formaction="/edit"
-              formmethod="post"
-              value="Edit"
-            />
-            <input
-              class="blog-posts__delete"
-              type="submit"
-              formaction="/delete"
-              formmethod="post"
-              value="Delete"
-            />
+            <div class="blog-posts__btn-row">
+              <input
+                class="blog-posts__edit"
+                type="submit"
+                formaction="/edit"
+                formmethod="post"
+                value="Edit"
+              />
+              <input
+                class="blog-posts__delete"
+                type="submit"
+                formaction="/delete"
+                formmethod="post"
+                value="Delete"
+              />
+            </div>
           </form>
         </li>
         <% }); %>
