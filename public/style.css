@@ -11,12 +11,12 @@ body {
   margin: 0;
 }
 
-.edit-post-form__title, .blog-posts__title, .create-post-form__title {
+.blog-posts__title, .edit-post-form__title, .create-post-form__title {
   font-family: "Barlow", sans-serif;
   font-weight: 700;
 }
 
-.edit-post-form__text, .blog-posts__text, .create-post-form__text {
+.blog-posts__text, .edit-post-form__text, .create-post-form__text {
   font-family: "Barlow", sans-serif;
   font-weight: 400;
 }
@@ -36,7 +36,7 @@ h1 {
   font-weight: 300;
 }
 
-.edit-post-form__cancel, .edit-post-form__update, .edit-post-form__text, .edit-post-form__title, .blog-posts__delete, .blog-posts__edit, .blog-posts__item, .create-post-form__create, .create-post-form__text, .create-post-form__title {
+.blog-posts__item, .edit-post-form__cancel, .edit-post-form__update, .blog-posts__delete, .blog-posts__edit, .create-post-form__create, .edit-post-form__text, .create-post-form__text, .edit-post-form__title, .create-post-form__title {
   border-radius: 0.8rem;
 }
 
@@ -44,12 +44,30 @@ h1 {
   padding: 1.6rem;
 }
 
-.edit-post-form__text, .edit-post-form__title, .blog-posts__item, .create-post-form__text, .create-post-form__title {
+.blog-posts__item, .edit-post-form__text, .create-post-form__text, .edit-post-form__title, .create-post-form__title {
   padding: 0.8rem;
 }
 
 .edit-post-form__cancel, .edit-post-form__update, .blog-posts__delete, .blog-posts__edit, .create-post-form__create {
   padding: 0.4rem;
+}
+
+.edit-post-form__text, .create-post-form__text, .edit-post-form__title, .create-post-form__title {
+  display: block;
+  margin-bottom: 0.8rem;
+  width: 100%;
+  font-size: 1.6rem;
+}
+
+.edit-post-form__cancel, .edit-post-form__update, .blog-posts__delete, .blog-posts__edit, .create-post-form__create {
+  font-size: 1.6rem;
+}
+
+.edit-post-form__btn-row, .blog-posts__btn-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.4rem;
 }
 
 h1 {
@@ -67,22 +85,9 @@ h1 {
 .create-post-form {
   margin-bottom: 3.2rem;
 }
-.create-post-form__title {
-  display: block;
-  margin-bottom: 0.8rem;
-  width: 100%;
-  font-size: 1.6rem;
-}
-.create-post-form__text {
-  display: block;
-  margin-bottom: 0.8rem;
-  width: 100%;
-  font-size: 1.6rem;
-}
 .create-post-form__create {
   display: block;
   margin: 0 auto;
-  font-size: 1.6rem;
 }
 
 .blog-posts {
@@ -105,43 +110,6 @@ h1 {
 .blog-posts__date {
   margin-bottom: 1.2rem;
   font-size: 1.2rem;
-}
-.blog-posts__btn-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 0.4rem;
-}
-.blog-posts__edit {
-  font-size: 1.6rem;
-}
-.blog-posts__delete {
-  font-size: 1.6rem;
-}
-
-.edit-post-form__title {
-  display: block;
-  margin-bottom: 0.8rem;
-  width: 100%;
-  font-size: 1.6rem;
-}
-.edit-post-form__text {
-  display: block;
-  margin-bottom: 0.8rem;
-  width: 100%;
-  font-size: 1.6rem;
-}
-.edit-post-form__btn-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 0.4rem;
-}
-.edit-post-form__update {
-  font-size: 1.6rem;
-}
-.edit-post-form__cancel {
-  font-size: 1.6rem;
 }
 
 /*# sourceMappingURL=style.css.map */
