@@ -16,7 +16,7 @@
         />
         <textarea
           class="create-post-form__text"
-          name="text"
+          name="bodyCopy"
           rows="6"
           required
           placeholder="Add some text..."
@@ -24,17 +24,18 @@
         <input class="create-post-form__create" type="submit" value="Create" />
       </form>
 
-      <% if (blog.posts.length >= 1) { %>
+      <% if (blog.length >= 1) { %>
       <ol class="blog-posts">
-        <% blog.posts.forEach((post)=> { %>
+        <% blog.forEach((post)=> { %>
         <li class="blog-posts__item">
           <h2 class="blog-posts__title"><%= post.title %></h2>
-          <p class="blog-posts__text"><%= post.text %></p>
-          <p class="blog-posts__date"><%= post.date %></p>
+          <p class="blog-posts__text"><%= post.body_copy %></p>
+          <p class="blog-posts__date"><%= post.created_date %></p>
+          <p class="blog-posts__date"><%= post.last_edited_date %></p>
           <form>
             <input type="hidden" name="id" value="<%= post.id %>" />
             <input type="hidden" name="title" value="<%= post.title %>" />
-            <input type="hidden" name="text" value="<%= post.text %>" />
+            <input type="hidden" name="text" value="<%= post.body_copy %>" />
             <div class="blog-posts__btn-row">
               <input
                 class="blog-posts__edit"

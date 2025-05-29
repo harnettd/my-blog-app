@@ -9,50 +9,34 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
 const client = new Client(clientConfig);
+await client.connect();
 
-function BlogPost (id, title, text) {
-    this.id = id;
-    this.title = title;
-    this.text = text;
-    this.date = new Date();
+const BlogPost = class {
+    constructor(title, bodyCopy) {
+        this.title = title;
+        this.bodyCopy = bodyCopy;
+        this.createdDate = new Date();
+    }
 }
 
-const blog = {
-    posts: [],
-    nextId: 0,
-
-    create: function (title, text) {
-        this.posts.unshift(new BlogPost(this.nextId, title, text));
-        this.nextId++;
-    },
-
-    _get_idx: function (id) {
-        let idx = 0;
-        while (this.posts[idx].id != id) {
-            idx++;
-        }
-        return idx;
-    },
-
-    update: function (id, title, text) {
-        const idx = this._get_idx(id);
-        this.posts[idx] = new BlogPost(id, title, text);
-    },
-
-    delete: function (id) {
-        const idx = this._get_idx(id);
-        this.posts.splice(idx, 1);
-    }
-};
-
-app.get("/", (req, res) => {
-    res.render("index.ejs", { blog: blog });
+app.get("/", async (req, res) => {
+    console.log("get");
+    const text = `SELECT * FROM posts;`;
+    const results = await client.query(text);
+    const blog = results.rows;
+    res.render("index.ejs", { blog });
 });
 
-app.post("/create", (req, res) => {
-    const body = req.body;
-    blog.create(body.title, body.text);
-    res.render("index.ejs", { blog: blog });
+app.post("/create", async (req, res) => {
+    const { title, bodyCopy } = req.body;
+    const blogPost = new BlogPost(title, bodyCopy);
+    const text = `
+        INSERT INTO posts (title, body_copy, created_date, last_edited_date) 
+            VALUES ($1, $2, $3, $3);
+    `;
+    const values = [blogPost.title, blogPost.bodyCopy, blogPost.createdDate];
+    await client.query(text, values);
+    res.redirect("/");
 });
 
 app.post("/edit", (req, res) => {
