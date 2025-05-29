@@ -20,7 +20,6 @@ const BlogPost = class {
 }
 
 app.get("/", async (req, res) => {
-    console.log("get");
     const text = `SELECT * FROM posts;`;
     const results = await client.query(text);
     const blog = results.rows;
@@ -55,10 +54,13 @@ app.post("/update", (req, res) => {
     res.render("index.ejs", { blog: blog });
 });
 
-app.post("/delete", (req, res) => {
+app.post("/delete", async (req, res) => {
     const body = req.body;
-    blog.delete(body.id);
-    res.render("index.ejs", { blog: blog });
+    const id = body.id;
+    const text = "DELETE FROM posts WHERE id = $1;";
+    const values = [id];
+    await client.query(text, values);
+    res.redirect("/");
 })
 
 app.listen(port, () => {
