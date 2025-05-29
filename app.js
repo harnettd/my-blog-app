@@ -1,10 +1,14 @@
 import express from "express";
+import { Client } from "pg";
+import { clientConfig } from "./secrets/client-config.js";
 
 const app = express();
 const port = 3000;
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
+
+const client = new Client(clientConfig);
 
 function BlogPost (id, title, text) {
     this.id = id;
